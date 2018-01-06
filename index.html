@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Welcome to the Neo-HPSTR Blog"
+title: "Simple Tech Blog"
 description: "Describe this nonsense."
 tags: [Jekyll, theme, themes, responsive, blog, modern]
 comments: false
@@ -33,12 +33,17 @@ comments: false
     {% endif %}
   </header>
   <div class="entry-content">
-      {{ post.excerpt }}
-      {% if post.content contains "<!-- more -->" %}
-          <div align="center">
-              <div markdown="0"><a href="{{ site.url }}{{ post.url }}" class="btn btn-info">Continue Reading ...</a></div>
-          </div>
-      {% endif %}
+      
+    {% comment %} {{ post.excerpt }} {% endcomment %}
+
+    {{ post.description }}
+
+    {% if post.description %}
+
+        <div align="center">
+            <div markdown="0"><a href="{{ site.url }}{{ post.url }}" class="btn btn-info">Continue Reading ...</a></div>
+        </div>
+    {% endif %}
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 {% endfor %}
